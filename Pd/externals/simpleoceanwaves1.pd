@@ -1,0 +1,39 @@
+#N canvas 598 94 768 673 10;
+#X obj 48 163 noise~;
+#X obj 69 483 vol;
+#X obj 71 533 dac~;
+#X obj 131 426 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9400 1;
+#X obj 69 393 *~;
+#X obj 406 363 osc~;
+#X floatatom 404 336 5 0 0 0 - - -, f 5;
+#X obj 407 312 hsl 128 15 0 0.3 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5700 1;
+#X obj 405 397 *~ 1;
+#X obj 69 362 lop~;
+#X floatatom 73 336 5 0 0 0 - - -, f 5;
+#X obj 74 313 hsl 128 15 90 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3000 1;
+#X text 409 280 Amplitude modulation;
+#X text 113 294 lowpass;
+#X msg 271 171 0.056;
+#X msg 231 172 90;
+#X obj 255 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 252 100 init default;
+#X connect 0 0 9 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 4 1;
+#X connect 9 0 4 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 14 0 6 0;
+#X connect 15 0 10 0;
+#X connect 16 0 15 0;
+#X connect 16 0 14 0;
