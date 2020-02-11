@@ -1,0 +1,39 @@
+#N canvas 609 140 1005 602 10;
+#X obj 84 559 dac~;
+#X obj 63 173 rpentaseq;
+#X obj 63 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 108 128 hsl 128 15 50 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 6083 1;
+#X floatatom 105 148 5 0 0 0 - - -;
+#X floatatom 276 211 5 0 0 0 - - -;
+#X obj 275 83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 276 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 275 106 metro 1000;
+#X obj 275 159 random 1000;
+#X obj 276 186 + 50;
+#X obj 84 531 vol;
+#X obj 123 440 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X obj 66 55 loadbang;
+#X text 299 63 Change sequencer speed;
+#X obj 61 350 trianglesynth;
+#X text 12 14 caution: depends on vol.pd \, trianglesynth.pd;
+#X connect 1 0 15 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 1;
+#X connect 5 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 11 0 0 0;
+#X connect 11 0 0 1;
+#X connect 12 0 11 1;
+#X connect 13 0 2 0;
+#X connect 13 0 6 0;
+#X connect 15 0 11 0;
