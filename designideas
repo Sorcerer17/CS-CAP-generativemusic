@@ -31,3 +31,4 @@ TO DO:
 * Create some fade in/fade out objects
 * Create a modulator object that can change direction, rather than going up and down to the same points every time
 * Lock sequencers to chord progressions
+* Zipf mandelbrot

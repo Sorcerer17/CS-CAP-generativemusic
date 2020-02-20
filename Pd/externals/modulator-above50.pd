@@ -2,7 +2,7 @@
 #X obj 415 271 osc~;
 #X floatatom 413 244 5 0 0 0 - - -;
 #X obj 416 220 hsl 128 15 0 0.3 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3387 1;
+-1 -1 3429 1;
 #X text 418 198 Amplitude modulation;
 #X obj 333 420 snapshot~;
 #X obj 405 427 metro 50;
@@ -22,8 +22,8 @@
 #X floatatom 335 585 5 0 0 0 - - -;
 #X obj 335 611 outlet;
 #X obj 594 403 / 1000;
-#X obj 335 452 + 1;
-#X obj 335 481 / 2;
+#X obj 335 452 + 3;
+#X obj 335 481 / 4;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
