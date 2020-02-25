@@ -8,19 +8,20 @@
 #X obj 126 189 v-rpentaseq;
 #X obj 127 289 vol;
 #X obj 145 268 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 508 1;
+-1 -1 1708 1;
 #X obj 524 285 vol;
 #X obj 542 264 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5096 1;
+-1 -1 5076 1;
 #X obj 324 159 trianglesynth;
 #X obj 337 360 vol;
 #X obj 338 212 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5198 1;
+-1 -1 3172 1;
 #X obj 322 132 b-rpentaseq;
 #X obj 539 242 modulator1;
+#X obj 690 197 phasor~;
 #X obj 690 285 vol;
 #X obj 708 264 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5582 1;
+-1 -1 6289 1;
 #X obj 705 241 modulator2;
 #X obj 690 174 rpentaseq;
 #X msg 757 156 50;
@@ -32,11 +33,10 @@
 #X obj 26 187 v-rpentaseq;
 #X obj 27 287 vol;
 #X obj 45 266 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2774 1;
-#X obj 860 184 radditivesynth;
+-1 -1 865 1;
 #X obj 860 282 vol;
 #X obj 878 261 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1813 1;
+-1 -1 59 1;
 #X obj 860 151 rpentaseq;
 #X obj 914 94 loadbang;
 #X msg 914 122 500;
@@ -47,14 +47,14 @@
 #X obj 363 258 *~ 0.1;
 #X obj 362 331 vol;
 #X obj 374 309 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1933 1;
+-1 -1 0 1;
 #X obj 287 192 *~ 0.9;
 #X obj 371 287 modulator-mostly0;
 #X obj 221 466 *~ 0.16;
 #X obj 142 246 modulator3;
 #X obj 876 210 modulator3;
 #X obj 42 244 modulator3;
-#X obj 690 197 phasor~;
+#X obj 860 182 radditivesynth2;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;
@@ -71,23 +71,23 @@
 #X connect 13 0 10 0;
 #X connect 13 0 37 0;
 #X connect 14 0 9 0;
-#X connect 15 0 43 0;
-#X connect 16 0 15 1;
-#X connect 17 0 16 0;
-#X connect 18 0 47 0;
-#X connect 19 0 18 1;
-#X connect 20 0 19 0;
-#X connect 21 0 13 1;
-#X connect 22 0 21 0;
-#X connect 23 0 15 0;
-#X connect 24 0 26 0;
-#X connect 25 0 24 0;
-#X connect 26 0 43 0;
-#X connect 27 0 26 1;
-#X connect 28 0 29 0;
+#X connect 15 0 24 0;
+#X connect 16 0 43 0;
+#X connect 17 0 16 1;
+#X connect 18 0 17 0;
+#X connect 19 0 15 0;
+#X connect 20 0 19 1;
+#X connect 21 0 20 0;
+#X connect 22 0 13 1;
+#X connect 23 0 22 0;
+#X connect 24 0 16 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 27 0 43 0;
+#X connect 28 0 27 1;
 #X connect 29 0 43 0;
 #X connect 30 0 29 1;
-#X connect 31 0 28 0;
+#X connect 31 0 47 0;
 #X connect 32 0 33 0;
 #X connect 33 0 31 1;
 #X connect 34 0 30 0;
@@ -102,5 +102,5 @@
 #X connect 43 0 1 0;
 #X connect 44 0 7 0;
 #X connect 45 0 34 0;
-#X connect 46 0 27 0;
-#X connect 47 0 23 0;
+#X connect 46 0 28 0;
+#X connect 47 0 29 0;
