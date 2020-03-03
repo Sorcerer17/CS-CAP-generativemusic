@@ -1,0 +1,52 @@
+#N canvas 324 130 886 597 10;
+#X obj 99 189 trianglesynth;
+#X obj 281 419 vol;
+#X obj 281 444 dac~;
+#X obj 299 399 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 40 52 upupchordseq;
+#X obj 281 344 catch~ sound;
+#X obj 99 212 throw~ sound;
+#X obj 281 368 *~ 0.5;
+#X obj 50 128 spigot;
+#X obj 137 129 spigot;
+#X obj 86 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 179 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 323 144 select 0 1;
+#X obj 327 103 random 2;
+#X obj 321 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 313 23 loadbang;
+#X obj 40 79 cmaj, f 12;
+#X obj 136 80 fmaj, f 12;
+#X obj 326 75 metro 2000;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 1 1;
+#X connect 4 0 16 0;
+#X connect 4 0 17 0;
+#X connect 4 1 16 1;
+#X connect 4 1 17 1;
+#X connect 4 2 16 2;
+#X connect 4 2 17 2;
+#X connect 4 3 16 3;
+#X connect 4 3 17 3;
+#X connect 5 0 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 8 1;
+#X connect 11 0 9 1;
+#X connect 12 0 10 0;
+#X connect 12 0 11 0;
+#X connect 12 1 10 0;
+#X connect 12 1 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 18 0;
+#X connect 15 0 14 0;
+#X connect 16 0 8 0;
+#X connect 17 0 9 0;
+#X connect 18 0 13 0;

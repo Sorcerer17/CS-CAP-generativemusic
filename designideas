@@ -26,8 +26,7 @@ Add reverb to some sounds, amount of reverb is modulated over time
 
 TO DO:
 * Toggle on/off whole instruments
-* Create some fade in/fade out objects
-* Create a modulator object that can change direction, rather than going up and down to the same points every time
 * Lock sequencers to chord progressions
+* Polyphony for chords
 * Zipf mandelbrot
 * Add chord progressions
