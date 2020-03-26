@@ -1,4 +1,4 @@
-#N canvas 953 0 958 988 10;
+#N canvas 0 94 682 673 10;
 #X obj 101 240 unpack 0 0;
 #X obj 101 265 mtof;
 #X obj 168 263 sel 0 1;
@@ -41,7 +41,7 @@
 #X obj 200 766 vol;
 #X obj 200 789 dac~;
 #X obj 245 756 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X msg 158 42 60;
 #X msg 198 43 64;
 #X msg 236 43 67;
@@ -49,6 +49,7 @@
 #X obj 218 8 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 289 193 route 1 2 3 4;
+#X msg 334 64 1;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 1 0 28 0;
@@ -116,3 +117,4 @@
 #X connect 47 1 9 0;
 #X connect 47 2 3 0;
 #X connect 47 3 6 0;
+#X connect 48 0 37 1;
