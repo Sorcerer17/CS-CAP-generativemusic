@@ -1,0 +1,87 @@
+#N canvas 11 70 1429 769 10;
+#X obj 192 245 pack f f f;
+#X obj 192 268 route 1 2 3 4;
+#X obj 192 374 outlet;
+#X obj 210 355 outlet;
+#X obj 229 336 outlet;
+#X obj 248 317 outlet;
+#X obj 192 222 poly 4 1, f 10;
+#X text 99 401 each outlet is passed to a synthesizer voice abstraction.
+;
+#X text 104 440 output should be each midi value being directed to
+a voice;
+#X obj 98 31 cnv 15 400 175 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X msg 118 74 table of chord values ex. (60 \, 64 \, 67 \, 72);
+#X text 197 99 how would i do this?;
+#X text 103 178 input is four midi values comprising a chord. Pass
+these to left inlet of poly?;
+#X obj 522 32 cnv 15 400 175 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 587 91 unpack f f f f;
+#X floatatom 568 139 5 0 0 0 - - -;
+#X floatatom 608 139 5 0 0 0 - - -;
+#X floatatom 648 141 5 0 0 0 - - -;
+#X floatatom 687 141 5 0 0 0 - - -;
+#X msg 587 57 60 64 67 72;
+#X text 548 166 this is one way to do it: without poly \, and just
+using a message box instead of a table. Note that there are NO commas
+in the message box.;
+#X obj 943 32 cnv 15 400 550 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X obj 966 77 array define chord-values;
+#X obj 970 195 array set chord-values;
+#X msg 970 174 60 64 67 72;
+#X msg 1049 175 0;
+#X obj 970 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 970 152 t b b;
+#X obj 977 268 array get chord-values;
+#X obj 977 246 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 970 51 resize 4;
+#X obj 977 291 unpack f f f f;
+#X floatatom 968 329 5 0 0 0 - - -;
+#X floatatom 1008 329 5 0 0 0 - - -;
+#X floatatom 1048 331 5 0 0 0 - - -;
+#X floatatom 1087 331 5 0 0 0 - - -;
+#X text 960 356 here's a way to do it using arrays (tables). There
+are 3 steps here. The top two objects create the array and give it
+a size. the middle chunk writes values to the array \, starting at
+the 0 position (so \, starting at the first empty slot). the bottom
+chunk outputs the contents of the array all at once \, in order.;
+#X obj 969 472 array get chord-values;
+#X floatatom 969 493 5 0 0 0 - - -;
+#X floatatom 969 452 5 0 0 0 - - -;
+#X text 967 514 you can also send a number to the left inlet to acces
+whatever value is stored at the index. Sending 0 will get you the first
+value \, and so on. you could use this to access the values randomly.
+This is something you can't simply do with just a message box + unpack
+(as seen in the orange box to the left);
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 6 0 0 0;
+#X connect 6 1 0 1;
+#X connect 6 2 0 2;
+#X connect 14 0 15 0;
+#X connect 14 1 16 0;
+#X connect 14 2 17 0;
+#X connect 14 3 18 0;
+#X connect 19 0 14 0;
+#X connect 24 0 23 0;
+#X connect 25 0 23 1;
+#X connect 26 0 27 0;
+#X connect 27 0 24 0;
+#X connect 27 1 25 0;
+#X connect 28 0 31 0;
+#X connect 29 0 28 0;
+#X connect 30 0 22 0;
+#X connect 31 0 32 0;
+#X connect 31 1 33 0;
+#X connect 31 2 34 0;
+#X connect 31 3 35 0;
+#X connect 37 0 38 0;
+#X connect 39 0 37 0;

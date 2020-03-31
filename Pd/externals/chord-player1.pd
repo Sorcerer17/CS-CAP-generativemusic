@@ -1,0 +1,61 @@
+#N canvas 0 94 959 985 10;
+#N canvas 961 618 959 462 synthesizer 0;
+#X obj 262 69 unpack f f f;
+#X obj 262 38 inlet pitches;
+#X obj 295 274 *~ 0.333;
+#X obj 295 319 outlet~;
+#X obj 523 144 cnv 15 200 50 empty empty DEBUG 20 12 0 14 -261953 -66577
+0;
+#X floatatom 548 168 5 0 0 0 - - -, f 5;
+#X floatatom 604 168 5 0 0 0 - - -, f 5;
+#X floatatom 661 168 5 0 0 0 - - -, f 5;
+#X obj 130 104 cnv 15 75 100 empty empty BASS 20 12 0 14 -204786 -66577
+0;
+#X obj 144 175 triangle;
+#X obj 144 152 mtof;
+#X obj 206 104 cnv 15 250 100 empty empty CHORD 20 12 0 14 -204800
+-66577 0;
+#X obj 238 165 triangle;
+#X obj 296 165 triangle;
+#X obj 353 165 triangle;
+#X obj 238 142 mtof;
+#X obj 296 142 mtof;
+#X obj 353 142 mtof;
+#X obj 144 131 - 12;
+#X connect 0 0 5 0;
+#X connect 0 0 15 0;
+#X connect 0 0 18 0;
+#X connect 0 1 16 0;
+#X connect 0 1 6 0;
+#X connect 0 2 7 0;
+#X connect 0 2 17 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 9 0 2 0;
+#X connect 10 0 9 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 14 0 2 0;
+#X connect 15 0 12 0;
+#X connect 16 0 13 0;
+#X connect 17 0 14 0;
+#X connect 18 0 10 0;
+#X restore 338 327 pd synthesizer;
+#X obj 338 300 triad-maker;
+#X floatatom 338 278 5 0 0 0 - - -, f 5;
+#X obj 338 461 vol;
+#X obj 338 484 dac~;
+#X obj 356 442 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 413 288 tgl 30 0 empty empty minor 0 15 0 10 -232576 -1 -1 1
+1;
+#X obj 301 294 stim;
+#X text 337 258 root note;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 3 1;
+#X connect 6 0 1 1;
+#X connect 7 0 1 0;
