@@ -1,4 +1,4 @@
-#N canvas 972 290 730 608 10;
+#N canvas 150 176 730 608 10;
 #N canvas 407 306 959 462 synthesizer 0;
 #X obj 262 69 unpack f f f;
 #X obj 262 38 inlet pitches;
@@ -40,15 +40,15 @@
 #X connect 16 0 13 0;
 #X connect 17 0 2 0;
 #X connect 18 0 9 0;
-#X restore 338 327 pd synthesizer;
+#X restore 241 363 pd synthesizer;
 #X obj 338 300 triad-maker;
 #X obj 338 461 vol;
 #X obj 338 484 dac~;
 #X obj 356 442 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 2000 1;
 #X obj 301 294 stim;
 #X text 299 226 root note;
-#N canvas 514 108 658 406 prog1 1;
+#N canvas 514 108 658 406 prog1 0;
 #X obj 228 376 outlet root;
 #X obj 328 376 outlet key;
 #X obj 228 354 receive root;
@@ -57,7 +57,7 @@
 #X connect 3 0 1 0;
 #X restore 338 246 pd prog1;
 #X text 403 227 toggle r inlet to enable minor;
-#X obj 423 286 tgl 30 0 empty empty minor 0 15 0 10 -232576 -1 -1 0
+#X obj 423 286 tgl 30 0 empty empty minor 0 15 0 10 -232576 -1 -1 1
 1;
 #X floatatom 201 244 5 0 0 0 - - -, f 5;
 #X obj 423 244 key;
@@ -68,8 +68,10 @@
 #X obj 499 465 sel 122;
 #X msg 499 486 0;
 #X text 499 424 press z;
-#X connect 0 0 2 0;
+#X obj 385 356 triangle;
+#X obj 385 330 v-chordseq;
 #X connect 1 0 0 0;
+#X connect 1 0 19 0;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;
 #X connect 4 0 2 1;
@@ -83,3 +85,5 @@
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
 #X connect 16 0 4 0;
+#X connect 18 0 2 0;
+#X connect 19 0 18 0;
