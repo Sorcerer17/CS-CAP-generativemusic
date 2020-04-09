@@ -1,67 +1,69 @@
 #N canvas 0 94 958 986 10;
-#X floatatom 113 259 5 0 0 0 - - -, f 5;
-#X obj 108 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X floatatom 203 259 5 0 0 0 - - -, f 5;
+#X obj 198 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 110 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 200 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 140 459 5 0 0 0 - - -, f 5;
-#X obj 141 434 mtof;
-#X obj 111 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom 230 610 5 0 0 0 - - -, f 5;
+#X obj 231 585 mtof;
+#X obj 201 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 132 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 222 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 152 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 242 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 114 238 + 1;
-#X obj 106 126 loadbang;
-#X obj 108 174 metro 150;
-#X obj 180 527 outlet;
-#X obj 200 67 inlet;
-#X obj 230 458 +;
-#X floatatom 227 140 5 0 0 0 - - -, f 5;
-#X obj 227 112 random 10;
-#X obj 227 164 select 0 1;
-#X obj 228 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 204 238 + 1;
+#X obj 196 126 loadbang;
+#X obj 198 174 metro 150;
+#X obj 230 674 outlet;
+#X obj 290 67 inlet;
+#X obj 267 522 +;
+#X floatatom 317 140 5 0 0 0 - - -, f 5;
+#X obj 317 112 random 10;
+#X obj 317 164 select 0 1;
+#X obj 318 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 272 445 5 0 0 0 - - -, f 5;
-#X msg 228 215 12;
-#X obj 252 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom 330 522 5 0 0 0 - - -, f 5;
+#X msg 318 215 12;
+#X obj 342 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 252 235 -12;
-#X obj 279 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 342 235 -12;
+#X obj 369 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 279 214 0;
-#X text 300 137 sometimes play up or down an octave;
-#X text 325 156 10% to be an octave higher;
-#X text 328 172 10% to be an octave lower;
-#X text 329 186 80% to have no octave change;
-#X floatatom 628 240 5 0 0 0 - - -, f 5;
-#X obj 627 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X msg 369 214 0;
+#X text 390 137 sometimes play up or down an octave;
+#X text 415 156 10% to be an octave higher;
+#X text 418 172 10% to be an octave lower;
+#X text 419 186 80% to have no octave change;
+#X floatatom 718 240 5 0 0 0 - - -, f 5;
+#X obj 717 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 628 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 718 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 627 135 metro 1000;
-#X obj 627 188 random 1000;
-#X obj 628 215 + 50;
-#X text 706 106 Change sequencer speed;
-#X obj 626 80 loadbang;
-#X text 125 32 RANDOM PENTATONIC VARIABLE TEMPO SEQUENCER;
-#X obj 114 296 select 1 2 3;
-#X text 195 294 Play notes from given chord set;
-#X obj 464 326 cnv 15 150 100 empty empty get_chord_values 20 12 0
-14 -261305 -66577 0;
-#X obj 31 52 inlet chord-values;
-#X floatatom 109 363 5 0 0 0 - - -, f 5;
-#X floatatom 133 385 5 0 0 0 - - -, f 5;
-#X floatatom 150 363 5 0 0 0 - - -, f 5;
-#X obj 31 75 send chord;
-#X obj 509 356 receive chord;
-#X obj 509 379 unpack f f f;
-#X obj 112 215 random 3;
-#X connect 0 0 37 0;
+#X obj 717 135 metro 1000;
+#X text 796 106 Change sequencer speed;
+#X obj 716 80 loadbang;
+#X obj 204 296 select 1 2 3;
+#X text 285 294 Play notes from given chord set;
+#X obj 22 345 cnv 15 150 100 empty empty get_chord_values 20 12 0 14
+-261305 -66577 0;
+#X obj 67 375 receive chord;
+#X obj 67 398 unpack f f f;
+#X obj 202 215 random 3;
+#X obj 299 674 outlet attack;
+#X floatatom 176 461 5 0 0 0 - - -, f 5;
+#X floatatom 222 461 5 0 0 0 - - -, f 5;
+#X floatatom 262 463 5 0 0 0 - - -, f 5;
+#X obj 718 215 + 100;
+#X text 312 693 bangs to trigger an envelope;
+#X text 219 693 frequency;
+#X obj 49 87 send chord;
+#X obj 49 60 inlet chord;
+#X obj 717 188 random 300;
+#X connect 0 0 34 0;
 #X connect 1 0 10 0;
 #X connect 2 0 15 0;
-#X connect 2 0 47 0;
+#X connect 2 0 39 0;
 #X connect 3 0 11 0;
 #X connect 4 0 3 0;
 #X connect 5 0 41 0;
@@ -70,6 +72,7 @@
 #X connect 8 0 0 0;
 #X connect 9 0 1 0;
 #X connect 10 0 2 0;
+#X connect 10 0 40 0;
 #X connect 12 0 1 0;
 #X connect 13 0 4 0;
 #X connect 14 0 16 0;
@@ -86,20 +89,20 @@
 #X connect 23 0 18 0;
 #X connect 28 0 10 1;
 #X connect 29 0 31 0;
-#X connect 30 0 32 0;
+#X connect 30 0 49 0;
 #X connect 31 0 30 0;
-#X connect 32 0 33 0;
-#X connect 33 0 28 0;
-#X connect 35 0 29 0;
-#X connect 37 0 5 0;
-#X connect 37 1 6 0;
-#X connect 37 2 7 0;
-#X connect 40 0 44 0;
+#X connect 33 0 29 0;
+#X connect 34 0 5 0;
+#X connect 34 1 6 0;
+#X connect 34 2 7 0;
+#X connect 37 0 38 0;
+#X connect 38 0 41 0;
+#X connect 38 1 42 0;
+#X connect 38 2 43 0;
+#X connect 39 0 8 0;
 #X connect 41 0 13 0;
 #X connect 42 0 13 0;
 #X connect 43 0 13 0;
-#X connect 45 0 46 0;
-#X connect 46 0 41 0;
-#X connect 46 1 42 0;
-#X connect 46 2 43 0;
-#X connect 47 0 8 0;
+#X connect 44 0 28 0;
+#X connect 48 0 47 0;
+#X connect 49 0 44 0;
