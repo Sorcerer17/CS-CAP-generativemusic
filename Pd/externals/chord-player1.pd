@@ -1,8 +1,8 @@
 #N canvas 465 126 1050 946 10;
-#N canvas 614 415 959 462 synthesizer 0;
+#N canvas 961 280 959 462 synthesizer 0;
 #X obj 262 69 unpack f f f;
 #X obj 262 38 inlet pitches;
-#X obj 295 319 outlet~;
+#X obj 295 325 outlet~;
 #X obj 523 144 cnv 15 200 50 empty empty DEBUG 20 12 0 14 -261953 -66577
 0;
 #X floatatom 548 168 5 0 0 0 - - -, f 5;
@@ -19,7 +19,7 @@
 #X obj 238 142 mtof;
 #X obj 296 142 mtof;
 #X obj 353 142 mtof;
-#X obj 295 274 *~ 0.25;
+#X obj 295 280 *~ 0.25;
 #X obj 138 131 - 12;
 #X obj 138 175 sawtooth;
 #X obj 138 197 lop~ 400;
