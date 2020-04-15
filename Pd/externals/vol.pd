@@ -1,22 +1,25 @@
 #N canvas 684 94 682 673 10;
-#X obj 40 40 inlet~;
+#X obj 40 10 inlet~;
 #X obj 46 246 outlet~;
 #X obj 43 175 *~;
-#X text 72 186 0-1;
-#X obj 136 93 *;
-#X obj 133 52 inlet;
-#X text 165 85 left * right;
-#X text 163 98 (Squares the input);
-#X msg 136 134 \$1 20;
-#X obj 137 170 line~;
-#X text 173 130 stores input in \$1 variable;
-#X text 177 142 the 20 doesn't change;
-#X text 179 162 both numbers in the message box get sent to line~,
+#X text 70 174 0-1;
+#X obj 104 69 *;
+#X obj 101 28 inlet;
+#X text 133 61 left * right;
+#X text 131 74 (Squares the input);
+#X msg 104 110 \$1 20;
+#X obj 105 146 line~;
+#X text 141 106 stores input in \$1 variable;
+#X text 145 118 the 20 doesn't change;
+#X text 147 138 both numbers in the message box get sent to line~,
 f 25;
+#X obj 43 198 clip~ -1 1;
+#X text 108 199 protects your speakers!;
 #X connect 0 0 2 0;
-#X connect 2 0 1 0;
+#X connect 2 0 13 0;
 #X connect 4 0 8 0;
 #X connect 5 0 4 0;
 #X connect 5 0 4 1;
 #X connect 8 0 9 0;
 #X connect 9 0 2 1;
+#X connect 13 0 1 0;
