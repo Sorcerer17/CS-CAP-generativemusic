@@ -1,0 +1,42 @@
+#N canvas 0 93 1366 674 10;
+#X obj 587 285 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 707 285 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 467 285 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 647 195 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 527 195 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 647 375 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 527 375 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 587 225 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 587 345 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 647 255 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 527 255 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 647 315 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 527 315 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 275 179 vsl 30 250 0 127 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 0 1;
+#X obj 335 179 vsl 30 250 0 127 0 0 empty empty empty 0 -9 0 10 -262130
+-1 -1 0 1;
+#X obj 395 179 vsl 30 250 0 127 0 0 empty empty empty 0 -9 0 10 -204786
+-1 -1 0 1;
+#X obj 775 179 vsl 30 250 0 127 0 0 empty empty empty 0 -9 0 10 -204800
+-1 -1 0 1;
+#X obj 835 179 vsl 30 250 0 127 0 0 empty empty empty 0 -9 0 10 -232576
+-1 -1 0 1;
+#X obj 895 179 vsl 30 250 0 127 0 0 empty empty empty 0 -9 0 10 -261056
+-1 -1 0 1;
+#X obj 275 66 bng 90 250 50 0 empty empty start/stop 5 45 0 14 -4034
+-1 -1;
+#X coords 0 -1 1 1 700 400 1 250 50;
