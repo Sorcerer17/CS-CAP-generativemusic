@@ -4,20 +4,20 @@
 #X obj 126 189 v-rpentaseq;
 #X obj 127 289 vol;
 #X obj 145 268 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4660 1;
+-1 -1 3150 1;
 #X obj 524 285 vol;
 #X obj 542 264 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5488 1;
+-1 -1 3150 1;
 #X obj 324 159 trianglesynth;
 #X obj 337 360 vol;
 #X obj 338 212 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5536 1;
+-1 -1 4725 1;
 #X obj 322 132 b-rpentaseq;
 #X obj 539 242 modulator1;
 #X obj 690 197 phasor~;
 #X obj 690 315 vol;
 #X obj 708 294 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1973 1;
+-1 -1 3150 1;
 #X obj 705 271 modulator2;
 #X obj 690 174 rpentaseq;
 #X msg 757 156 50;
@@ -29,10 +29,10 @@
 #X obj 26 187 v-rpentaseq;
 #X obj 27 287 vol;
 #X obj 45 266 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4944 1;
+-1 -1 3150 1;
 #X obj 858 300 vol;
 #X obj 876 279 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1267 1;
+-1 -1 1575 1;
 #X obj 858 169 rpentaseq;
 #X obj 912 112 loadbang;
 #X msg 912 140 500;
