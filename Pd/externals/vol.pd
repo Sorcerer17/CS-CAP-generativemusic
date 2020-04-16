@@ -13,13 +13,10 @@
 #X text 145 118 the 20 doesn't change;
 #X text 147 138 both numbers in the message box get sent to line~,
 f 25;
-#X obj 43 198 clip~ -1 1;
-#X text 108 199 protects your speakers!;
 #X connect 0 0 2 0;
-#X connect 2 0 13 0;
+#X connect 2 0 1 0;
 #X connect 4 0 8 0;
 #X connect 5 0 4 0;
 #X connect 5 0 4 1;
 #X connect 8 0 9 0;
 #X connect 9 0 2 1;
-#X connect 13 0 1 0;

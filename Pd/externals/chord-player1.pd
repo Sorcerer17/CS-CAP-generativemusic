@@ -1,4 +1,4 @@
-#N canvas 306 94 1050 674 10;
+#N canvas 2128 106 903 856 10;
 #N canvas 268 206 959 462 synthesizer 0;
 #X obj 262 69 unpack f f f;
 #X obj 262 38 inlet pitches;
@@ -122,19 +122,19 @@
 #X connect 22 0 15 0;
 #X restore 174 226 pd synthesizer;
 #X text 350 156 toggle r inlet to enable minor;
-#X obj 345 118 tgl 30 0 empty empty minor 0 15 0 10 -232576 -1 -1 1
+#X obj 345 118 tgl 30 0 empty empty minor 0 15 0 10 -232576 -1 -1 0
 1;
 #X floatatom 258 118 5 0 0 0 - - -, f 5;
-#X obj 384 311 vline~;
-#X obj 339 335 *~;
-#X msg 384 288 1 50 \, 0 50 100;
-#X obj 339 360 *~ 0.6;
+#X obj 404 311 vline~;
+#X obj 359 335 *~;
+#X msg 404 288 1 50 \, 0 50 100;
+#X obj 359 360 *~ 0.6;
 #N canvas 458 199 693 569 random-chord 0;
 #X obj 71 460 outlet root;
 #X obj 221 463 outlet minor;
 #X obj 67 13 inlet speed;
 #X obj 160 9 loadbang;
-#X obj 160 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 160 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 160 57 metro;
 #X floatatom 82 154 5 0 0 0 - - -, f 5;
@@ -156,8 +156,8 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 258 94 pd random-chord;
-#X text 414 224 chord arpeggio sequencer;
-#X text 489 288 envelope;
+#X text 434 224 chord arpeggio sequencer;
+#X text 509 288 envelope;
 #X text 66 228 polyphonic synth;
 #X text 170 158 root of chord;
 #N canvas 0 94 450 300 triangle 0;
@@ -180,225 +180,82 @@
 #X connect 5 0 8 0;
 #X connect 6 0 3 1;
 #X connect 9 0 0 0;
-#X restore 339 252 pd triangle;
-#N canvas 0 94 1061 615 triad-maker 0;
-#X obj 620 172 inlet root;
-#X floatatom 349 452 5 0 0 0 - - -, f 5;
-#X floatatom 872 411 5 0 0 0 - - -, f 5;
-#X obj 868 336 + 7;
-#X text 544 138 input is the first note of the triad;
-#X obj 592 495 pack f f f;
-#X obj 592 518 outlet;
-#X text 488 570 outputs a pack of the first \, second \, and third
-notes in the triad;
-#X obj 550 288 cnv 15 200 175 empty empty empty 20 12 0 14 -233017
--66577 0;
-#X floatatom 616 440 5 0 0 0 - - -, f 5;
-#X obj 576 309 + 4;
-#X obj 653 309 + 3;
-#X obj 679 336 inlet minor;
-#X obj 679 359 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X restore 359 252 pd triangle;
+#N canvas 0 94 450 300 audiomonitor 0;
+#X obj 101 103 cnv 15 198 96 empty empty audiomonitor 50 12 0 14 -232320
+-1 0;
+#X obj 76 265 dac~;
+#X obj 112 141 hsl 175 15 0 1 0 0 empty empty empty -2 -8 0 10 -204800
+-1 -1 0 1;
+#N canvas 0 94 450 300 vol 0;
+#X obj 40 40 inlet~;
+#X obj 46 246 outlet~;
+#X obj 43 175 *~;
+#X text 72 186 0-1;
+#X obj 136 93 *;
+#X obj 133 52 inlet;
+#X text 165 85 left * right;
+#X text 163 98 (Squares the input);
+#X msg 136 134 \$1 20;
+#X obj 137 170 line~;
+#X text 173 130 stores input in \$1 variable;
+#X text 177 142 the 20 doesn't change;
+#X text 179 162 both numbers in the message box get sent to line~,
+f 25;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 8 0 9 0;
+#X connect 9 0 2 1;
+#X restore 76 242 pd vol;
+#X text 158 160 volume to DAC;
+#X obj 76 34 inlet~ sound;
+#X text 108 160 0;
+#X text 281 160 1;
+#X obj 329 100 cnv 15 100 175 empty empty mute 20 12 0 14 -233017 -66577
+0;
+#X obj 336 135 key;
+#X msg 336 177 0;
+#X text 153 183 press M to mute;
+#X text 337 117 press M;
+#X obj 336 156 sel 109;
+#X obj 336 249 spigot;
+#X obj 369 230 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 668 408 spigot;
-#X obj 620 365 == 0;
-#X obj 620 388 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 570 288 whether to make minor triad;
-#X obj 587 408 spigot 1;
-#X obj 442 309 + 0, f 15;
-#X connect 0 0 3 0;
-#X connect 0 0 10 0;
-#X connect 0 0 11 0;
-#X connect 0 0 19 0;
-#X connect 1 0 5 0;
-#X connect 2 0 5 2;
-#X connect 3 0 2 0;
-#X connect 5 0 6 0;
-#X connect 9 0 5 1;
-#X connect 10 0 18 0;
-#X connect 11 0 14 0;
-#X connect 12 0 13 0;
-#X connect 13 0 15 0;
-#X connect 13 0 14 1;
-#X connect 14 0 9 0;
-#X connect 15 0 16 0;
-#X connect 16 0 18 1;
-#X connect 18 0 9 0;
-#X connect 19 0 1 0;
-#X restore 258 180 pd triad-maker;
-#X obj 357 182 scale-maker-pentatonic;
-#N canvas 0 94 900 669 pentachords 0;
-#X floatatom 203 259 5 0 0 0 - - -, f 5;
-#X obj 198 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 200 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 201 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 218 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 235 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 204 238 + 1;
-#X obj 196 126 loadbang;
-#X obj 290 67 inlet;
-#X obj 22 345 cnv 15 150 100 empty empty get_scale_notes 20 12 0 14
--261305 -66577 0;
-#X floatatom 176 461 5 0 0 0 - - -, f 5;
-#X floatatom 222 461 5 0 0 0 - - -, f 5;
-#X floatatom 262 463 5 0 0 0 - - -, f 5;
-#X floatatom 296 461 5 0 0 0 - - -, f 5;
-#X floatatom 342 461 5 0 0 0 - - -, f 5;
-#X obj 251 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 268 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 202 215 random 5;
-#X obj 204 296 select 1 2 3 4 5;
-#X obj 67 398 unpack f f f f f;
-#X obj 49 87 send penta;
-#X obj 49 60 inlet penta;
-#X obj 67 375 receive penta;
-#X obj 247 535 outlet root;
-#X obj 198 174 metro 1000;
-#X connect 0 0 18 0;
-#X connect 1 0 24 0;
-#X connect 2 0 17 0;
-#X connect 3 0 10 0;
-#X connect 4 0 11 0;
-#X connect 5 0 12 0;
-#X connect 6 0 0 0;
-#X connect 7 0 1 0;
-#X connect 8 0 1 0;
-#X connect 10 0 23 0;
-#X connect 11 0 23 0;
-#X connect 12 0 23 0;
-#X connect 13 0 23 0;
-#X connect 14 0 23 0;
-#X connect 15 0 13 0;
-#X connect 16 0 14 0;
-#X connect 17 0 6 0;
-#X connect 18 0 3 0;
-#X connect 18 1 4 0;
-#X connect 18 2 5 0;
-#X connect 18 3 15 0;
-#X connect 18 4 16 0;
-#X connect 19 0 10 0;
-#X connect 19 1 11 0;
-#X connect 19 2 12 0;
-#X connect 19 3 13 0;
-#X connect 19 4 14 0;
-#X connect 21 0 20 0;
-#X connect 22 0 19 0;
-#X connect 24 0 2 0;
-#X restore 584 186 pd pentachords;
-#X obj 221 487 audiomonitor;
-#N canvas 0 94 922 599 chordseq 0;
-#X floatatom 203 259 5 0 0 0 - - -, f 5;
-#X obj 198 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 200 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 230 610 5 0 0 0 - - -, f 5;
-#X obj 231 585 mtof;
-#X obj 201 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 222 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 242 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 204 238 + 1;
-#X obj 196 126 loadbang;
-#X obj 230 674 outlet;
-#X obj 290 67 inlet;
-#X obj 267 522 +;
-#X floatatom 317 140 5 0 0 0 - - -, f 5;
-#X obj 317 112 random 10;
-#X obj 317 164 select 0 1;
-#X obj 318 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 330 522 5 0 0 0 - - -, f 5;
-#X msg 318 215 12;
-#X obj 342 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X msg 342 235 -12;
-#X obj 369 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X msg 369 214 0;
-#X text 390 137 sometimes play up or down an octave;
-#X text 415 156 10% to be an octave higher;
-#X text 418 172 10% to be an octave lower;
-#X text 419 186 80% to have no octave change;
-#X obj 204 296 select 1 2 3;
-#X text 285 294 Play notes from given chord set;
-#X obj 22 345 cnv 15 150 100 empty empty get_chord_values 20 12 0 14
--261305 -66577 0;
-#X obj 67 375 receive chord;
-#X obj 67 398 unpack f f f;
-#X obj 202 215 random 3;
-#X obj 299 674 outlet attack;
-#X floatatom 176 461 5 0 0 0 - - -, f 5;
-#X floatatom 222 461 5 0 0 0 - - -, f 5;
-#X floatatom 262 463 5 0 0 0 - - -, f 5;
-#X text 312 693 bangs to trigger an envelope;
-#X text 219 693 frequency;
-#X obj 49 87 send chord;
-#X obj 49 60 inlet chord;
-#X obj 198 174 metro 150;
-#X connect 0 0 27 0;
-#X connect 1 0 41 0;
-#X connect 2 0 14 0;
-#X connect 2 0 32 0;
-#X connect 3 0 10 0;
-#X connect 4 0 3 0;
-#X connect 5 0 34 0;
-#X connect 6 0 35 0;
-#X connect 7 0 36 0;
-#X connect 8 0 0 0;
-#X connect 9 0 1 0;
-#X connect 11 0 1 0;
-#X connect 12 0 4 0;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
-#X connect 15 0 16 0;
-#X connect 15 1 19 0;
-#X connect 15 2 21 0;
-#X connect 16 0 18 0;
-#X connect 17 0 12 1;
-#X connect 18 0 17 0;
-#X connect 19 0 20 0;
-#X connect 20 0 17 0;
-#X connect 21 0 22 0;
-#X connect 22 0 17 0;
-#X connect 27 0 5 0;
-#X connect 27 1 6 0;
-#X connect 27 2 7 0;
-#X connect 30 0 31 0;
-#X connect 31 0 34 0;
-#X connect 31 1 35 0;
-#X connect 31 2 36 0;
-#X connect 32 0 8 0;
-#X connect 34 0 12 0;
-#X connect 35 0 12 0;
-#X connect 36 0 12 0;
-#X connect 40 0 39 0;
-#X connect 41 0 2 0;
-#X connect 41 0 33 0;
-#X restore 340 223 pd chordseq;
-#X connect 0 0 17 0;
-#X connect 2 0 14 1;
-#X connect 2 0 15 1;
-#X connect 3 0 15 0;
+#X obj 369 206 loadbang;
+#X text 389 230 uncheck to disable mute button functionality;
+#X connect 2 0 3 1;
+#X connect 3 0 1 0;
+#X connect 3 0 1 1;
+#X connect 5 0 3 0;
+#X connect 9 0 13 0;
+#X connect 10 0 14 0;
+#X connect 13 0 10 0;
+#X connect 14 0 2 0;
+#X connect 15 0 14 1;
+#X connect 16 0 15 0;
+#X coords 0 -1 1 1 200 100 1 100 100;
+#X restore 174 556 pd audiomonitor;
+#X obj 359 403 vol;
+#X obj 377 384 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 359 226 chordseq;
+#X obj 258 180 triad-maker;
+#X connect 0 0 14 0;
+#X connect 2 0 18 1;
+#X connect 3 0 18 0;
 #X connect 4 0 5 1;
 #X connect 5 0 7 0;
 #X connect 6 0 4 0;
-#X connect 7 0 17 0;
+#X connect 7 0 15 0;
 #X connect 8 0 3 0;
 #X connect 8 1 2 0;
 #X connect 13 0 5 0;
-#X connect 14 0 0 0;
-#X connect 14 0 18 0;
-#X connect 15 0 16 0;
-#X connect 16 0 14 0;
-#X connect 18 0 13 0;
-#X connect 18 1 6 0;
+#X connect 15 0 14 0;
+#X connect 16 0 15 1;
+#X connect 17 0 13 0;
+#X connect 17 1 6 0;
+#X connect 18 0 0 0;
+#X connect 18 0 17 0;
