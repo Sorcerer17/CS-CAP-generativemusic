@@ -25,17 +25,17 @@
 -1 -1;
 #X obj 527 315 bng 30 250 50 0 guiButton4 empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 275 179 vsl 30 250 0 127 0 0 guiSlider1 empty empty 0 -9 0 10
+#X obj 275 179 vsl 30 250 0 1 0 0 guiSlider1 empty empty 0 -9 0 10
 -261234 -1 -1 0 1;
-#X obj 335 179 vsl 30 250 0 127 0 0 guiSlider2 empty empty 0 -9 0 10
+#X obj 335 179 vsl 30 250 0 1 0 0 guiSlider2 empty empty 0 -9 0 10
 -262130 -1 -1 0 1;
-#X obj 395 179 vsl 30 250 0 127 0 0 guiSlider3 empty empty 0 -9 0 10
+#X obj 395 179 vsl 30 250 0 1 0 0 guiSlider3 empty empty 0 -9 0 10
 -204786 -1 -1 0 1;
-#X obj 775 179 vsl 30 250 0 127 0 0 guiSlider4 empty empty 0 -9 0 10
+#X obj 775 179 vsl 30 250 0 1 0 0 guiSlider4 empty empty 0 -9 0 10
 -204800 -1 -1 0 1;
-#X obj 835 179 vsl 30 250 0 127 0 0 guiSlider5 empty empty 0 -9 0 10
+#X obj 835 179 vsl 30 250 0 1 0 0 guiSlider5 empty empty 0 -9 0 10
 -232576 -1 -1 0 1;
-#X obj 895 179 vsl 30 250 0 127 0 0 guiSlider6 empty empty 0 -9 0 10
+#X obj 895 179 vsl 30 250 0 1 0 0 guiSlider6 empty empty 0 -9 0 10
 -261056 -1 -1 0 1;
 #X obj 275 66 bng 90 250 50 0 guiButtonStartStop empty start/stop 5
 45 0 14 -4034 -1 -1;

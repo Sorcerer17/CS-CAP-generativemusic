@@ -1,17 +1,17 @@
-#N canvas 0 93 1920 986 10;
+#N canvas 0 94 1920 986 10;
 #X obj 126 223 trianglesynth;
 #X obj 516 198 random-oceanwaves;
 #X obj 145 268 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6148 1;
+-1 -1 5114 1;
 #X obj 535 242 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 274 1;
+-1 -1 439 1;
 #X obj 334 331 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5173 1;
+-1 -1 5772 1;
 #X obj 532 220 modulator1;
 #X obj 690 197 phasor~;
 #X obj 690 287 vol;
 #X obj 708 266 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4917 1;
+-1 -1 208 1;
 #X obj 705 243 modulator2;
 #X msg 735 151 50;
 #X obj 735 129 loadbang;
@@ -19,9 +19,9 @@
 #X obj 690 221 lop~ 180;
 #X obj 26 221 trianglesynth;
 #X obj 45 266 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3260 1;
+-1 -1 4913 1;
 #X obj 876 279 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2865 1;
+-1 -1 2397 1;
 #X obj 912 122 loadbang;
 #X msg 912 144 500;
 #X obj 873 254 *;
@@ -175,7 +175,7 @@
 #X restore 1090 187 pd synthesizer;
 #X obj 1090 164 r masterchord;
 #X obj 1106 241 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4296 1;
+-1 -1 2256 1;
 #X obj 1103 219 modulator3;
 #X obj 1088 262 vol;
 #X msg 351 96 1000;
@@ -212,7 +212,7 @@
 #X restore 1248 146 pd triangle;
 #X obj 1248 317 vol;
 #X obj 1266 298 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11963 1;
+-1 -1 0 1;
 #X obj 1248 120 chordseq;
 #X obj 1248 94 r masterchord;
 #X obj 1263 276 modulator-mostly0;
@@ -252,8 +252,6 @@
 #X text 276 -140 root of chord;
 #X obj 364 -118 triad-maker;
 #X obj 364 -95 send masterchord;
-#X obj 294 149 triangle;
-#X obj 283 175 *~ 0.75;
 #X obj 75 494 audiomonitor2;
 #X obj 232 442 catch~ mono;
 #X obj 57 442 catch~ left;
@@ -360,6 +358,14 @@
 #X restore 1249 350 pd rotateStereo;
 #X obj 1248 254 *~ 1;
 #X obj 1088 285 throw~ mono;
+#X obj 283 175 *~ 0.75;
+#X obj 294 149 triangle;
+#X obj 599 482 controlpanel-gui;
+#X obj 517 11 r guiButton6;
+#X obj 441 506 r guiButton7;
+#X obj 451 536 r guiButton8;
+#N canvas 671 189 688 551 bass 1;
+#X restore 472 108 pd bass;
 #X connect 0 0 32 0;
 #X connect 1 0 33 0;
 #X connect 2 0 32 1;
@@ -391,13 +397,13 @@
 #X connect 27 0 19 0;
 #X connect 28 0 15 0;
 #X connect 29 0 36 0;
-#X connect 30 0 87 0;
+#X connect 30 0 85 0;
 #X connect 31 0 30 1;
-#X connect 32 0 85 0;
-#X connect 33 0 86 0;
-#X connect 34 0 89 0;
-#X connect 35 0 84 0;
-#X connect 36 0 88 0;
+#X connect 32 0 83 0;
+#X connect 33 0 84 0;
+#X connect 34 0 87 0;
+#X connect 35 0 82 0;
+#X connect 36 0 86 0;
 #X connect 37 0 34 0;
 #X connect 38 0 43 2;
 #X connect 39 0 43 0;
@@ -406,12 +412,12 @@
 #X connect 42 0 40 0;
 #X connect 43 0 14 0;
 #X connect 44 0 22 0;
-#X connect 44 0 75 0;
+#X connect 44 0 92 0;
 #X connect 45 0 49 0;
 #X connect 46 0 45 0;
 #X connect 47 0 49 1;
 #X connect 48 0 47 0;
-#X connect 49 0 92 0;
+#X connect 49 0 90 0;
 #X connect 50 0 44 2;
 #X connect 51 0 6 0;
 #X connect 52 0 29 0;
@@ -419,10 +425,10 @@
 #X connect 54 0 51 0;
 #X connect 55 0 52 0;
 #X connect 56 0 57 1;
-#X connect 57 0 91 0;
+#X connect 57 0 89 0;
 #X connect 58 0 56 0;
 #X connect 61 0 57 0;
-#X connect 62 0 90 0;
+#X connect 62 0 88 0;
 #X connect 63 0 62 1;
 #X connect 64 0 61 0;
 #X connect 64 1 58 0;
@@ -433,12 +439,12 @@
 #X connect 71 0 70 0;
 #X connect 71 1 69 0;
 #X connect 73 0 74 0;
-#X connect 75 0 76 0;
-#X connect 76 0 34 0;
-#X connect 78 0 82 0;
-#X connect 79 0 81 0;
-#X connect 80 0 83 0;
-#X connect 81 0 77 0;
-#X connect 82 0 77 2;
-#X connect 83 0 77 1;
-#X connect 91 0 62 0;
+#X connect 76 0 80 0;
+#X connect 77 0 79 0;
+#X connect 78 0 81 0;
+#X connect 79 0 75 0;
+#X connect 80 0 75 2;
+#X connect 81 0 75 1;
+#X connect 89 0 62 0;
+#X connect 91 0 34 0;
+#X connect 92 0 91 0;
