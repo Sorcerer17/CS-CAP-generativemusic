@@ -1,17 +1,17 @@
-#N canvas 86 94 1280 674 10;
+#N canvas 0 93 1920 986 10;
 #X obj 126 223 trianglesynth;
 #X obj 516 198 random-oceanwaves;
 #X obj 145 268 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1472 1;
+-1 -1 6148 1;
 #X obj 535 242 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 274 1;
 #X obj 334 331 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5013 1;
+-1 -1 5173 1;
 #X obj 532 220 modulator1;
 #X obj 690 197 phasor~;
 #X obj 690 287 vol;
 #X obj 708 266 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 72 1;
+-1 -1 4917 1;
 #X obj 705 243 modulator2;
 #X msg 735 151 50;
 #X obj 735 129 loadbang;
@@ -19,9 +19,9 @@
 #X obj 690 221 lop~ 180;
 #X obj 26 221 trianglesynth;
 #X obj 45 266 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3044 1;
+-1 -1 3260 1;
 #X obj 876 279 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1601 1;
+-1 -1 2865 1;
 #X obj 912 122 loadbang;
 #X msg 912 144 500;
 #X obj 873 254 *;
@@ -175,7 +175,7 @@
 #X restore 1090 187 pd synthesizer;
 #X obj 1090 164 r masterchord;
 #X obj 1106 241 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3966 1;
+-1 -1 4296 1;
 #X obj 1103 219 modulator3;
 #X obj 1088 262 vol;
 #X msg 351 96 1000;
@@ -212,7 +212,7 @@
 #X restore 1248 146 pd triangle;
 #X obj 1248 317 vol;
 #X obj 1266 298 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 11963 1;
 #X obj 1248 120 chordseq;
 #X obj 1248 94 r masterchord;
 #X obj 1263 276 modulator-mostly0;
@@ -342,22 +342,6 @@
 #X connect 6 0 2 0;
 #X restore 857 333 pd randomStereo;
 #X obj 307 373 throw~ mono;
-#N canvas 0 94 450 300 randomStereo 0;
-#X obj 108 95 crossfader1;
-#X obj 93 152 vol;
-#X obj 188 152 vol;
-#X obj 93 175 throw~ left;
-#X obj 188 175 throw~ right;
-#X obj 108 67 modulator3;
-#X obj 141 8 inlet~;
-#X connect 0 0 1 1;
-#X connect 0 1 2 1;
-#X connect 1 0 3 0;
-#X connect 2 0 4 0;
-#X connect 5 0 0 0;
-#X connect 6 0 1 0;
-#X connect 6 0 2 0;
-#X restore 1087 313 pd randomStereo;
 #N canvas 0 94 450 300 rotateStereo 0;
 #X obj 108 95 crossfader1;
 #X obj 93 152 vol;
@@ -375,6 +359,7 @@
 #X connect 6 0 0 0;
 #X restore 1249 350 pd rotateStereo;
 #X obj 1248 254 *~ 1;
+#X obj 1088 285 throw~ mono;
 #X connect 0 0 32 0;
 #X connect 1 0 33 0;
 #X connect 2 0 32 1;
@@ -426,7 +411,7 @@
 #X connect 46 0 45 0;
 #X connect 47 0 49 1;
 #X connect 48 0 47 0;
-#X connect 49 0 90 0;
+#X connect 49 0 92 0;
 #X connect 50 0 44 2;
 #X connect 51 0 6 0;
 #X connect 52 0 29 0;
@@ -434,10 +419,10 @@
 #X connect 54 0 51 0;
 #X connect 55 0 52 0;
 #X connect 56 0 57 1;
-#X connect 57 0 92 0;
+#X connect 57 0 91 0;
 #X connect 58 0 56 0;
 #X connect 61 0 57 0;
-#X connect 62 0 91 0;
+#X connect 62 0 90 0;
 #X connect 63 0 62 1;
 #X connect 64 0 61 0;
 #X connect 64 1 58 0;
@@ -456,4 +441,4 @@
 #X connect 81 0 77 0;
 #X connect 82 0 77 2;
 #X connect 83 0 77 1;
-#X connect 92 0 62 0;
+#X connect 91 0 62 0;
