@@ -28,4 +28,4 @@ TO DO:
 * Toggle on/off whole instruments / add more deviation
 * Zipf mandelbrot??
 * pick a chord progression and stick to it? Maybe have a GUI button reset the chord progression
-* 
+* Organize abstractions: package main program and all dependencies in one folder
