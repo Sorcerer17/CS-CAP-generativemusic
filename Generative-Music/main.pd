@@ -1,0 +1,2 @@
+#N canvas 362 193 763 464 10;
+#X obj 24 29 resources/generative-backend;
