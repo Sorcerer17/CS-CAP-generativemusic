@@ -1,31 +1,5 @@
-Sound 1 (ocean waves):
-Use white noise generators with their amplitudes modulated
-White noise is also lowpass filtered for rumbling wave sounds, and highpass filtered for crashing waves
+TO DO/PONDER:
 
-Sound 2 (space harp):
-Oscillators randomly sequenced but constrained to a scale
-Fast attack, slow release
-
-Sound 3 (bass drone):
-Base drone randomly sequenced but changes notes less frequently
-Additive synth- Levels of harmonic frequencies modulated over time to change waveform
-
-Sound 4 (chords):
-A synth pad that plays chords
-It follows a chord progression that is randomly chosen at start
-As time goes on, one chord in the progression will be changed to another chord randomly.
-
---- More sounds ---
-
-
-
-
-Add reverb to some sounds, amount of reverb is modulated over time
-
-
-
-TO DO:
 * Toggle on/off whole instruments / add more deviation
 * Zipf mandelbrot??
 * pick a chord progression and stick to it? Maybe have a GUI button reset the chord progression
-* Organize abstractions: package main program and all dependencies in one folder
