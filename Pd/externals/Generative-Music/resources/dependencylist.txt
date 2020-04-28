@@ -17,3 +17,5 @@ triangle-LFO
 
 generative-main5
 control-panel-gui
+\
+stim.pd triad-maker.pd varytempo.pd triangle.pd chordseq.pd modulator3.pd modulator1.pd vol.pd crossfader1.pd b-chordseq.pd modulator-mostly0.pd modulator-above50.pd random-oceanwaves.pd modulator2.pd radditivesynth2.pd triangle-LFO.pd generative-main5.pd controlpanel-gui.pd
