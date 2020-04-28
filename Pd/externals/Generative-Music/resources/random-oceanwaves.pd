@@ -1,0 +1,61 @@
+#N canvas 1366 94 959 985 10;
+#X obj 56 170 noise~;
+#X obj 69 393 *~;
+#X obj 406 363 osc~;
+#X floatatom 404 336 5 0 0 0 - - -, f 5;
+#X obj 407 312 hsl 128 15 0 0.3 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3006 1;
+#X obj 405 397 *~ 1;
+#X obj 69 362 lop~;
+#X floatatom 73 336 5 0 0 0 - - -, f 5;
+#X obj 74 313 hsl 128 15 90 3000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 63 1;
+#X text 409 290 Amplitude modulation;
+#X obj 390 509 snapshot~;
+#X obj 462 516 metro 50;
+#X obj 462 544 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 462 497 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 392 541 + 2;
+#X obj 392 569 expr pow ($f1 \, 6);
+#X obj 392 597 + 100;
+#X text 404 472 filter modulation;
+#X text 52 152 sound source;
+#X text 96 294 lowpass filter;
+#X floatatom 614 422 5 0 0 0 - - -, f 5;
+#X obj 613 294 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 614 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 614 397 / 1000;
+#X obj 613 370 random 300;
+#X obj 613 317 metro 1000;
+#X obj 610 219 loadbang;
+#X text 354 29 RANDOM OCEAN WAVES;
+#X obj 69 439 outlet~;
+#X connect 0 0 6 0;
+#X connect 1 0 28 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 1;
+#X connect 5 0 10 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 1;
+#X connect 8 0 7 0;
+#X connect 10 0 14 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 8 0;
+#X connect 20 0 4 0;
+#X connect 21 0 25 0;
+#X connect 22 0 24 0;
+#X connect 23 0 20 0;
+#X connect 24 0 23 0;
+#X connect 25 0 22 0;
+#X connect 26 0 21 0;
+#X connect 26 0 13 0;
