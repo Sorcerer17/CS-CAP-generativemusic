@@ -8,5 +8,7 @@ HOW TO INSTALL/RUN:
 3. Open Pure Data. Make sure the DSP is checkmarked 'on'.
 4. Open main.pd in Pure Data.
 
-Once the program is running, make sure you press the start button and turn up the volume.
+Note:
+Make sure Pure Data is NOT in "Edit Mode" (Edit > Edit Mode, or ctrl+e). If you're in Edit Mode, you won't be able to interact with the program apart from dragging it around.
+Once the program is running, make sure you press the start button and turn up the volume. Headphones are recommended.
 The unlabelled buttons and sliders do things -- feel free to play around with them, or leave them at their default settings.
