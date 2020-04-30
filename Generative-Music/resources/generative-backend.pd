@@ -1,4 +1,4 @@
-#N canvas 520 174 1230 831 10;
+#N canvas 470 123 1230 831 10;
 #X obj 18 -247 cnv 15 400 190 empty empty chord 20 12 0 14 -261234
 -66577 0;
 #X text 209 -159 toggle r inlet to enable minor;
@@ -45,16 +45,15 @@
 #X text 29 -157 root of chord;
 #X obj 117 -135 triad-maker;
 #X obj 117 -112 send masterchord;
-#N canvas 622 233 688 551 bass 0;
+#N canvas 66 246 688 551 bass 0;
 #X obj 124 331 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4803 1;
+-1 -1 5605 1;
 #X obj 141 68 loadbang;
 #X obj 121 308 modulator-above50;
 #X obj 123 175 phasor~;
 #X obj 123 198 *~ 0.1;
-#X obj 134 249 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 241 278 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 131 227 modulator-mostly0;
 #X obj 97 350 vol;
 #X obj 122 271 vol;
 #X obj 84 123 b-chordseq;
@@ -68,9 +67,9 @@
 #X obj 415 41 r guiButton8;
 #X msg 181 96 250;
 #X msg 221 96 125;
-#X obj 350 249 ftom;
-#X obj 350 295 mtof;
-#X obj 335 381 vol;
+#X obj 478 112 ftom;
+#X obj 478 158 mtof;
+#X obj 463 244 vol;
 #N canvas 0 94 450 300 randomStereo 0;
 #X obj 108 95 crossfader1;
 #X obj 93 152 vol;
@@ -86,9 +85,9 @@
 #X connect 5 0 0 0;
 #X connect 6 0 1 0;
 #X connect 6 0 2 0;
-#X restore 328 426 pd randomStereo;
-#X obj 350 355 r guiSlider2;
-#X obj 350 272 + 19;
+#X restore 456 289 pd randomStereo;
+#X obj 478 218 r guiSlider2;
+#X obj 478 135 + 19;
 #N canvas 0 94 928 622 fm-triangle 0;
 #X floatatom 236 89 5 0 0 0 - - -, f 5;
 #X obj 236 31 inlet frequency;
@@ -96,10 +95,6 @@
 #X obj 419 84 osc~;
 #X obj 419 130 *~;
 #X obj 505 39 loadbang;
-#X obj 297 373 vol;
-#X obj 299 406 dac~;
-#X obj 314 352 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
 #X obj 75 57 hsl 128 15 0 1500 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 236 191 +;
@@ -110,68 +105,210 @@
 #X obj 534 143 metro 0;
 #X msg 419 61 8;
 #X msg 434 107 3;
-#X obj 236 214 triangle;
 #X obj 641 255 * 50;
 #X obj 641 230 r guiSlider1;
 #X obj 646 80 * 50;
 #X obj 646 55 r guiSlider4;
-#X connect 0 0 10 0;
+#N canvas 0 93 1173 650 additiveSynth 0;
+#X obj 282 448 osc~;
+#X obj 283 526 vol;
+#X obj 319 409 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 10339 1;
+#X floatatom 282 428 5 0 0 0 - - -, f 5;
+#X obj 519 570 *~ 0.125;
+#X obj 347 449 osc~;
+#X obj 348 527 vol;
+#X obj 384 410 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 7739 1;
+#X floatatom 347 429 5 0 0 0 - - -, f 5;
+#X obj 413 449 osc~;
+#X obj 414 527 vol;
+#X obj 450 410 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 0 1;
+#X floatatom 413 429 5 0 0 0 - - -, f 5;
+#X obj 476 449 osc~;
+#X obj 477 527 vol;
+#X obj 513 410 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 3603 1;
+#X floatatom 476 429 5 0 0 0 - - -, f 5;
+#X obj 539 449 osc~;
+#X obj 540 527 vol;
+#X obj 576 410 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 1668 1;
+#X floatatom 539 429 5 0 0 0 - - -, f 5;
+#X obj 604 450 osc~;
+#X obj 605 528 vol;
+#X obj 641 411 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 3810 1;
+#X floatatom 604 430 5 0 0 0 - - -, f 5;
+#X obj 670 450 osc~;
+#X obj 671 528 vol;
+#X obj 707 411 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 722 1;
+#X floatatom 670 430 5 0 0 0 - - -, f 5;
+#X obj 733 450 osc~;
+#X obj 734 528 vol;
+#X obj 770 411 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 94 1;
+#X floatatom 733 430 5 0 0 0 - - -, f 5;
+#X obj 282 407 * 1;
+#X obj 347 408 * 2;
+#X obj 413 408 * 3;
+#X obj 476 408 * 4;
+#X obj 539 408 * 5;
+#X obj 604 409 * 6;
+#X obj 670 409 * 7;
+#X obj 733 409 * 8;
+#X obj 285 342 hsl 500 30 0 1000 0 0 empty empty Fundamental -2 -8
+0 10 -203904 -1 -1 18432 1;
+#X floatatom 282 378 5 0 0 0 - - -, f 5;
+#X obj 154 136 inlet;
+#X obj 520 662 outlet~;
+#X obj 565 302 * 0.75;
+#X obj 492 280 modulator3;
+#X obj 682 249 modulator3;
+#X obj 742 277 modulator3;
+#X obj 281 246 modulator-above50;
+#X obj 562 248 modulator2;
+#X obj 428 247 r guiSlider5;
+#X obj 635 195 expr ($f1*-1)+1;
+#X obj 347 273 modulator-above50;
+#X obj 698 309 * 0.3;
+#X obj 764 317 * 0.2;
+#X obj 627 307 * 0.3;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 44 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 1;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;
+#X connect 11 0 10 1;
+#X connect 12 0 9 0;
+#X connect 13 0 14 0;
+#X connect 14 0 4 0;
+#X connect 15 0 14 1;
+#X connect 16 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 4 0;
+#X connect 19 0 18 1;
+#X connect 20 0 17 0;
+#X connect 21 0 22 0;
+#X connect 22 0 4 0;
+#X connect 23 0 22 1;
+#X connect 24 0 21 0;
+#X connect 25 0 26 0;
+#X connect 26 0 4 0;
+#X connect 27 0 26 1;
+#X connect 28 0 25 0;
+#X connect 29 0 30 0;
+#X connect 30 0 4 0;
+#X connect 31 0 30 1;
+#X connect 32 0 29 0;
+#X connect 33 0 3 0;
+#X connect 34 0 8 0;
+#X connect 35 0 12 0;
+#X connect 36 0 16 0;
+#X connect 37 0 20 0;
+#X connect 38 0 24 0;
+#X connect 39 0 28 0;
+#X connect 40 0 32 0;
+#X connect 41 0 42 0;
+#X connect 42 0 33 0;
+#X connect 42 0 34 0;
+#X connect 42 0 35 0;
+#X connect 42 0 36 0;
+#X connect 42 0 37 0;
+#X connect 42 0 38 0;
+#X connect 42 0 39 0;
+#X connect 42 0 40 0;
+#X connect 43 0 41 0;
+#X connect 45 0 19 0;
+#X connect 46 0 15 0;
+#X connect 47 0 54 0;
+#X connect 48 0 55 0;
+#X connect 49 0 2 0;
+#X connect 50 0 45 0;
+#X connect 51 0 52 0;
+#X connect 51 0 11 0;
+#X connect 52 0 56 0;
+#X connect 53 0 7 0;
+#X connect 54 0 27 0;
+#X connect 55 0 31 0;
+#X connect 56 0 23 0;
+#X restore 238 216 pd additiveSynth;
+#X connect 0 0 7 0;
 #X connect 1 0 0 0;
 #X connect 3 0 4 0;
-#X connect 4 0 11 0;
-#X connect 5 0 15 0;
-#X connect 5 0 16 0;
+#X connect 4 0 8 0;
 #X connect 5 0 12 0;
-#X connect 6 0 7 0;
-#X connect 6 0 7 1;
-#X connect 8 0 6 1;
-#X connect 9 0 0 0;
-#X connect 10 0 13 0;
-#X connect 10 0 17 0;
-#X connect 11 0 10 1;
-#X connect 12 0 14 0;
-#X connect 14 0 11 0;
-#X connect 14 0 0 0;
-#X connect 15 0 3 0;
-#X connect 16 0 4 1;
-#X connect 17 0 2 0;
-#X connect 17 0 6 0;
-#X connect 18 0 4 1;
-#X connect 19 0 18 0;
-#X connect 20 0 3 0;
-#X connect 21 0 20 0;
-#X restore 336 331 pd fm-triangle;
-#X connect 0 0 7 1;
-#X connect 1 0 10 0;
+#X connect 5 0 13 0;
+#X connect 5 0 9 0;
+#X connect 6 0 0 0;
+#X connect 7 0 10 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 1;
+#X connect 9 0 11 0;
+#X connect 11 0 8 0;
+#X connect 11 0 0 0;
+#X connect 12 0 3 0;
+#X connect 13 0 4 1;
+#X connect 14 0 4 1;
+#X connect 15 0 14 0;
+#X connect 16 0 3 0;
+#X connect 17 0 16 0;
+#X connect 18 0 2 0;
+#X restore 464 194 pd fm-triangle;
+#X obj 238 171 modulator-mostly0;
+#X obj 238 255 spigot;
+#X obj 272 208 loadbang;
+#X obj 179 209 r guiSlider3;
+#X obj 179 232 sel 0;
+#X msg 272 233 1;
+#X msg 305 232 0;
+#X connect 0 0 6 1;
+#X connect 1 0 9 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 8 1;
-#X connect 6 0 5 0;
-#X connect 7 0 12 0;
-#X connect 8 0 7 0;
-#X connect 9 0 3 0;
-#X connect 9 0 14 0;
-#X connect 9 0 20 0;
-#X connect 10 0 9 2;
-#X connect 11 0 9 0;
-#X connect 13 0 7 0;
-#X connect 14 0 13 0;
-#X connect 15 0 10 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 1;
+#X connect 6 0 11 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 0;
+#X connect 8 0 13 0;
+#X connect 8 0 19 0;
+#X connect 9 0 8 2;
+#X connect 10 0 8 0;
+#X connect 12 0 6 0;
+#X connect 13 0 12 0;
+#X connect 14 0 9 0;
+#X connect 15 0 17 0;
 #X connect 16 0 18 0;
-#X connect 17 0 19 0;
-#X connect 18 0 9 2;
-#X connect 19 0 9 2;
+#X connect 17 0 8 2;
+#X connect 18 0 8 2;
+#X connect 19 0 24 0;
 #X connect 20 0 25 0;
-#X connect 21 0 26 0;
-#X connect 22 0 23 0;
-#X connect 24 0 22 1;
+#X connect 21 0 22 0;
+#X connect 23 0 21 1;
+#X connect 24 0 20 0;
 #X connect 25 0 21 0;
-#X connect 26 0 22 0;
+#X connect 26 0 27 0;
+#X connect 27 0 5 0;
+#X connect 28 0 31 0;
+#X connect 29 0 30 0;
+#X connect 29 0 5 0;
+#X connect 30 0 31 0;
+#X connect 30 1 32 0;
+#X connect 31 0 27 1;
+#X connect 32 0 27 1;
 #X restore 118 -23 pd bass;
 #N canvas 0 94 450 300 triangleArp2 0;
 #X obj 150 192 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2441 1;
+-1 -1 2373 1;
 #X obj 147 170 modulator3;
 #X obj 132 213 vol;
 #X obj 131 109 chordseq;
@@ -204,7 +341,7 @@
 #X restore 15 0 pd triangleArp2;
 #N canvas 959 188 828 519 triangleArp1 0;
 #X obj 153 161 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 727 1;
+-1 -1 5870 1;
 #X obj 150 139 modulator3;
 #X obj 131 179 vol;
 #X obj 156 66 varytempo;
@@ -238,35 +375,53 @@
 #N canvas 0 94 450 300 waves 0;
 #X obj 106 88 random-oceanwaves;
 #X obj 125 132 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4294 1;
+-1 -1 3668 1;
 #X obj 122 110 modulator1;
 #X obj 107 153 vol;
-#N canvas 0 94 450 300 randomStereo 0;
-#X obj 108 95 crossfader1;
-#X obj 93 152 vol;
-#X obj 188 152 vol;
-#X obj 93 175 throw~ left;
-#X obj 188 175 throw~ right;
-#X obj 108 67 modulator3;
-#X obj 141 8 inlet~;
-#X connect 0 0 1 1;
-#X connect 0 1 2 1;
+#N canvas 0 94 911 690 randomStereo 0;
+#X obj 377 200 crossfader1;
+#X obj 299 378 vol;
+#X obj 380 379 vol;
+#X obj 299 401 throw~ left;
+#X obj 380 402 throw~ right;
+#X obj 377 172 modulator3;
+#X obj 410 113 inlet~;
+#X obj 594 282 crossfader1;
+#X obj 311 279 crossfader1;
+#X obj 600 375 vol;
+#X obj 681 376 vol;
+#X obj 600 398 throw~ left;
+#X obj 681 399 throw~ right;
+#X obj 683 195 delwrite~ wave 1000;
+#X obj 683 216 delread~ wave 2000;
+#X text 607 171 play delayed wave on opposite side;
+#X connect 0 0 8 0;
+#X connect 0 1 7 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
 #X connect 5 0 0 0;
 #X connect 6 0 1 0;
 #X connect 6 0 2 0;
+#X connect 6 0 13 0;
+#X connect 7 0 9 1;
+#X connect 7 1 10 1;
+#X connect 8 0 1 1;
+#X connect 8 1 2 1;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 14 0 9 0;
+#X connect 14 0 10 0;
 #X restore 107 183 pd randomStereo;
 #X connect 0 0 3 0;
 #X connect 1 0 3 1;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X restore 172 -23 pd waves;
-#N canvas 0 94 450 300 fastSaw 0;
+#N canvas 0 94 565 415 fastSaw 0;
 #X obj 150 107 phasor~;
 #X obj 150 197 vol;
 #X obj 168 176 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6007 1;
+-1 -1 3426 1;
 #X obj 165 153 modulator2;
 #X msg 195 61 50;
 #X obj 195 39 loadbang;
@@ -306,7 +461,7 @@
 #X restore 230 -23 pd fastSaw;
 #N canvas 0 94 450 300 additiveSynth 0;
 #X obj 156 199 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 22 1;
+-1 -1 56 1;
 #X obj 192 42 loadbang;
 #X msg 192 64 500;
 #X obj 153 174 *;
@@ -343,7 +498,7 @@
 #X connect 8 0 6 0;
 #X connect 9 0 8 0;
 #X restore 303 -23 pd additiveSynth;
-#N canvas 0 94 450 300 polysynth 0;
+#N canvas 0 94 931 590 polysynth 0;
 #N canvas 268 206 959 462 synthesizer 0;
 #X obj 262 69 unpack f f f;
 #X obj 262 38 inlet pitches;
@@ -467,16 +622,30 @@
 #X connect 22 0 15 0;
 #X restore 130 87 pd synthesizer;
 #X obj 130 64 r masterchord;
-#X obj 146 141 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3173 1;
-#X obj 143 119 modulator3;
+#X obj 356 81 modulator3;
 #X obj 128 162 vol;
 #X obj 128 185 throw~ mono;
-#X connect 0 0 4 0;
+#X obj 358 184 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1340 1;
+#X obj 355 161 spigot;
+#X obj 389 114 loadbang;
+#X obj 296 138 sel 0;
+#X msg 389 139 1;
+#X msg 422 138 0;
+#X obj 296 115 r guiSlider6;
+#X connect 0 0 3 0;
 #X connect 1 0 0 0;
-#X connect 2 0 4 1;
-#X connect 3 0 2 0;
-#X connect 4 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 6 1;
+#X connect 10 0 6 1;
+#X connect 11 0 8 0;
+#X connect 11 0 5 0;
 #X restore 412 -23 pd polysynth;
 #N canvas 2104 205 717 572 spinningArp 0;
 #X obj 140 126 vline~;
@@ -507,7 +676,7 @@
 #X restore 95 67 pd triangle;
 #X obj 95 238 vol;
 #X obj 113 219 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11935 1;
+-1 -1 8062 1;
 #X obj 95 41 chordseq;
 #X obj 95 15 r masterchord;
 #X obj 110 198 modulator-mostly0;
@@ -551,11 +720,11 @@
 #X obj 226 48 triangle-LFO;
 #X floatatom 226 95 5 0 0 0 - - -, f 5;
 #X obj 202 135 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8131 1;
+-1 -1 500 1;
 #X obj 127 158 vol;
 #X obj 226 2 loadbang;
 #X obj 226 71 expr ($f1*$f1);
-#X obj 70 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 70 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 55 64 select 0 1;
 #X msg 42 90 0;
@@ -585,12 +754,12 @@
 #X connect 16 0 1 0;
 #X connect 16 0 0 0;
 #X restore 605 -23 pd steadyWave;
-#N canvas 73 329 843 535 mainMixer 0;
+#N canvas 625 342 843 535 mainMixer 0;
 #X obj 315 40 catch~ mono;
 #X obj 140 40 catch~ left;
 #X obj 229 40 catch~ right;
 #X obj 295 176 hsl 128 15 0 1 0 0 empty guiSliderVolume volume -2 -8
-0 10 -262144 -1 -1 5183 1;
+0 10 -262144 -1 -1 4325 1;
 #N canvas 0 94 450 300 vol 0;
 #X obj 40 40 inlet~;
 #X obj 46 246 outlet~;
@@ -637,11 +806,11 @@ f 25;
 #X connect 8 0 9 0;
 #X connect 9 0 2 1;
 #X restore 230 173 pd vol;
-#X obj 182 314 dac~;
+#X obj 181 314 dac~;
 #X obj 141 247 clip~ -1 1;
 #X obj 229 248 clip~ -1 1;
 #X obj 555 93 r guiButtonStartStop;
-#X obj 555 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 555 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 140 63 *~;
 #X obj 229 63 *~;
@@ -651,7 +820,7 @@ f 25;
 #X msg 556 201 0 1000;
 #X obj 559 309 line~;
 #X obj 559 362 snapshot~;
-#X obj 570 339 stim;
+#X obj 586 337 stim;
 #X text 573 123 when checked \, unmute;
 #X connect 0 0 13 0;
 #X connect 1 0 11 0;
@@ -680,48 +849,96 @@ f 25;
 #X restore 21 112 pd mainMixer;
 #X obj 301 101 cnv 15 700 400 empty empty empty 20 12 0 14 -249661
 -66577 0;
-#X obj 634 338 bng 30 250 50 0 guiButton7 empty empty 17 7 0 10 -228856
+#X obj 712 338 bng 30 150 50 0 guiButton7 empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 754 338 bng 30 250 50 0 guiButton13 empty empty 17 7 0 10 -228856
+#X obj 592 268 bng 30 150 50 0 guiButton2 empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 514 338 bng 30 250 50 0 guiButton1 empty empty 17 7 0 10 -228856
+#X obj 672 268 bng 30 150 50 0 guiButton6 empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 694 248 bng 30 250 50 0 guiButton9 empty empty 17 7 0 10 -228856
+#X obj 672 408 bng 30 150 50 0 guiButton8 empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 574 248 bng 30 250 50 0 guiButton2 empty empty 17 7 0 10 -228856
+#X obj 552 338 bng 30 150 50 0 guiButton3 empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 694 428 bng 30 250 50 0 guiButton12 empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 574 428 bng 30 250 50 0 guiButton5 empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 634 278 bng 30 250 50 0 guiButton6 empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 634 398 bng 30 250 50 0 guiButton8 empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 694 308 bng 30 250 50 0 guiButton10 empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 574 308 bng 30 250 50 0 guiButton3 empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 694 368 bng 30 250 50 0 guiButton11 empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 574 368 bng 30 250 50 0 guiButton4 empty empty 17 7 0 10 -228856
+#X obj 592 408 bng 30 150 50 0 guiButton4 empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 322 232 vsl 30 250 0 1 0 0 guiSlider1 empty empty 0 -9 0 10
--261234 -1 -1 2800 1;
+-261234 -1 -1 1400 1;
 #X obj 382 232 vsl 30 250 0 1 0 0 guiSlider2 empty empty 0 -9 0 10
--262130 -1 -1 20300 1;
+-262130 -1 -1 24900 1;
 #X obj 442 232 vsl 30 250 0 1 0 0 guiSlider3 empty empty 0 -9 0 10
 -204786 -1 -1 0 1;
 #X obj 822 232 vsl 30 250 0 1 0 0 guiSlider4 empty empty 0 -9 0 10
--203904 -1 -1 300 1;
+-203904 -1 -1 700 1;
 #X obj 882 232 vsl 30 250 0 1 0 0 guiSlider5 empty empty 0 -9 0 10
 -232192 -1 -1 0 1;
 #X obj 942 232 vsl 30 250 0 1 0 0 guiSlider6 empty empty 0 -9 0 10
 -261056 -1 -1 0 1;
-#X obj 322 119 bng 90 250 50 0 guiButtonStartStop empty start/stop
+#X obj 601 308 bng 90 150 50 0 guiButtonStartStop empty start/stop
 5 45 0 14 -204800 -1 -258113;
-#X obj 476 147 hsl 420 30 0 1 0 0 guiSliderVolume empty VOLUME 180
-15 0 18 -204800 -1 -5568 17100 1;
+#X obj 351 150 hsl 600 30 0 1 0 0 guiSliderVolume empty VOLUME 265
+15 0 18 -204800 -1 -5568 20400 1;
+#N canvas 0 93 329 244 perc1 0;
+#X obj 114 90 vline~;
+#X obj 69 114 *~;
+#X text 171 86 envelope;
+#X obj 33 49 noise~;
+#X obj 114 44 bng 15 250 50 0 empty guiButton2 empty 17 7 0 10 -204800
+-1 -1;
+#X obj 32 75 hip~ 10000;
+#X obj 69 139 *~ 0.5;
+#X msg 114 67 1 25 \, 0 25 50;
+#X text 133 38 click me!;
+#X obj 69 164 throw~ mono;
+#X connect 0 0 1 1;
+#X connect 1 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 1 0;
+#X connect 6 0 9 0;
+#X connect 7 0 0 0;
+#X restore 118 1 pd perc1;
+#N canvas 633 208 852 612 perc2 0;
+#X obj 209 177 vline~;
+#X obj 174 238 *~;
+#X text 266 173 envelope;
+#X obj 35 132 noise~;
+#X msg 209 154 1 25 \, 0 25 50;
+#X obj 174 288 throw~ mono;
+#X obj 247 66 loadbang;
+#X obj 352 38 r guiButton6;
+#X obj 437 39 r guiButton7;
+#X obj 521 39 r guiButton8;
+#X obj 223 119 metro;
+#X obj 212 88 tgl 15 0 empty guiButton4 empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X msg 287 94 125;
+#X obj 102 159 triangle;
+#X obj 101 112 loadbang;
+#X msg 101 135 65;
+#X obj 31 188 *~ 0.5;
+#X obj 34 158 lop~ 150;
+#X msg 247 94 500;
+#X msg 327 94 62.5;
+#X connect 0 0 1 1;
+#X connect 1 0 5 0;
+#X connect 3 0 17 0;
+#X connect 4 0 0 0;
+#X connect 6 0 18 0;
+#X connect 7 0 18 0;
+#X connect 8 0 12 0;
+#X connect 9 0 19 0;
+#X connect 10 0 4 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 1;
+#X connect 13 0 1 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 1 0;
+#X connect 17 0 16 0;
+#X connect 18 0 10 1;
+#X connect 19 0 10 1;
+#X restore 175 4 pd perc2;
+#X text 852 485 created by Owen Sullivan;
 #X connect 2 0 6 1;
 #X connect 3 0 6 0;
 #X connect 4 0 3 0;
