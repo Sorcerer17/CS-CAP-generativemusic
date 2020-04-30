@@ -1,6 +1,8 @@
 # CS-CAP-generativemusic
 Capstone project for Spring 2020 CS-377; Generative Music
 ----------------------------------------------------------
+![preview screenshot](screenshot.png)
+
 HOW TO INSTALL/RUN:
 
 1. Make sure you have Pure Data installed. It is free & open-source software available for Linux, Mac, and Windows.
